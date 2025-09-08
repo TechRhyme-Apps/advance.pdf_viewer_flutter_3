@@ -1,32 +1,36 @@
 group "com.advance.pdf_viewer_flutter_3"
 version "1.0"
 
-def args = ["-Xlint:deprecation","-Xlint:unchecked"]
+buildscript {
+    ext.kotlin_version = "2.1.0"
+    repositories {
+        google()
+        mavenCentral()
+    }
 
-// ⚠️ REMOVE buildscript { ... } block
-// The AGP version is provided by the root app project.
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.7.3")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+    }
+}
 
-rootProject.allprojects {
+allprojects {
     repositories {
         google()
         mavenCentral()
     }
 }
 
-
-project.getTasks().withType(JavaCompile) {
-    options.compilerArgs.addAll(args)
-}
-
 apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
 
 android {
     namespace "com.advance_pdf_viewer_flutter_3"
-
-    compileSdk = 35   //!  Modern syntax for defining compilesdk version
+≈
+    compileSdk = 35   // ✅ modern syntax
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11   //!  Safer for Flutter don't use java-17
+        sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
 
