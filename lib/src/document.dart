@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:advance_pdf_viewer/src/page.dart';
+import 'package:advance_pdf_viewer_flutter_3/advance_pdf_viewer.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:path_provider/path_provider.dart';

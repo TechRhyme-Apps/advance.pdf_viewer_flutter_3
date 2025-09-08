@@ -1,5 +1,5 @@
+import 'package:advance_pdf_viewer_flutter_3/advance_pdf_viewer.dart';
 import 'package:flutter/material.dart';
-import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 
 void main() => runApp(MaterialApp(
       home: MyApp(),
@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool _isLoading = true;
-  PDFDocument document;
+  PDFDocument? document;
 
   @override
   void initState() {
@@ -83,7 +83,7 @@ class _MyAppState extends State<MyApp> {
         child: _isLoading
             ? Center(child: CircularProgressIndicator())
             : PDFViewer(
-                document: document,
+                document: document!,
                 zoomSteps: 1,
                 //uncomment below line to preload all pages
                 // lazyLoad: false,

@@ -16,9 +16,9 @@ public final class GeneratedPluginRegistrant {
   private static final String TAG = "GeneratedPluginRegistrant";
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     try {
-      flutterEngine.getPlugins().add(new pt.tribeiro.flutter_plugin_pdf_viewer.FlutterPluginPdfViewerPlugin());
+      flutterEngine.getPlugins().add(new com.advance_pdf_viewer_flutter_3.FlutterPluginPdfViewerPlugin());
     } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin advance_pdf_viewer_flutter_3, pt.tribeiro.flutter_plugin_pdf_viewer.FlutterPluginPdfViewerPlugin", e);
+      Log.e(TAG, "Error registering plugin advance_pdf_viewer_flutter_3, com.advance_pdf_viewer_flutter_3.FlutterPluginPdfViewerPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new io.flutter.plugins.pathprovider.PathProviderPlugin());
