@@ -3,19 +3,8 @@ version "1.0"
 
 def args = ["-Xlint:deprecation","-Xlint:unchecked"]
 
-buildscript {
-    ext {
-        agp_version = '8.5.2'   //!  Modern AGP version
-    }
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath "com.android.tools.build:gradle:$agp_version"
-    }
-}
+// ⚠️ REMOVE buildscript { ... } block
+// The AGP version is provided by the root app project.
 
 rootProject.allprojects {
     repositories {
@@ -23,6 +12,7 @@ rootProject.allprojects {
         mavenCentral()
     }
 }
+
 
 project.getTasks().withType(JavaCompile) {
     options.compilerArgs.addAll(args)
@@ -36,8 +26,8 @@ android {
     compileSdk = 35   //!  Modern syntax for defining compilesdk version
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11   //!  Safer for Flutter don't use java-17
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     defaultConfig {
