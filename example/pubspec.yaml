@@ -1,5 +1,5 @@
-name: advance_pdf_viewer_example
-description: Demonstrates how to use the advance_pdf_viewer plugin.
+name: advance_pdf_viewer_flutter_3_example
+description: Demonstrates how to use the advance_pdf_viewer_flutter_3 plugin.
 publish_to: 'none'
 
 environment:
