@@ -4,18 +4,18 @@ version '1.0-SNAPSHOT'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.6.0'
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -31,4 +31,11 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+}
+
+dependencies {
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.+'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    compileOnly files('tempLibs/flutter.jar')
 }
