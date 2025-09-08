@@ -1,14 +1,19 @@
-group 'pt.tribeiro.flutter_pdf_viewer'
-version '1.0-SNAPSHOT'
+group "com.advance.pdf_viewer_flutter_3"
+version "1.0"
+
+def args = ["-Xlint:deprecation","-Xlint:unchecked"]
 
 buildscript {
+    ext {
+        agp_version = '8.5.2'   //!  Modern AGP version
+    }
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
+        classpath "com.android.tools.build:gradle:$agp_version"
     }
 }
 
@@ -19,18 +24,27 @@ rootProject.allprojects {
     }
 }
 
-apply plugin: 'com.android.library'
+project.getTasks().withType(JavaCompile) {
+    options.compilerArgs.addAll(args)
+}
 
+apply plugin: "com.android.library"
 
 android {
     namespace "com.advance_pdf_viewer_flutter_3"
-    compileSdk 34   
 
-    defaultConfig {
-        minSdk 21   
+    compileSdk = 35   //!  Modern syntax for defining compilesdk version
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
-    lint {
+    defaultConfig {
+        minSdk = 21
+    }
+
+    lintOptions {
         disable 'InvalidPackage'
     }
 }
