@@ -1,32 +1,11 @@
-group "com.advance.pdf_viewer_flutter_3"
+group "com.advance_pdf_viewer_flutter_3"
 version "1.0"
 
-buildscript {
-    ext.kotlin_version = "2.1.0"
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath("com.android.tools.build:gradle:8.7.3")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
 apply plugin: "com.android.library"
-apply plugin: "kotlin-android"
 
 android {
     namespace "com.advance_pdf_viewer_flutter_3"
-    compileSdk = 35   // ✅ modern syntax
+    compileSdk = 35
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -37,7 +16,7 @@ android {
         minSdk = 21
     }
 
-    lintOptions {
+    lint {
         disable 'InvalidPackage'
     }
 }
@@ -46,6 +25,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
     implementation 'com.facebook.android:audience-network-sdk:6.+'
     implementation 'androidx.annotation:annotation:1.1.0'
-    // compileOnly files('tempLibs/flutter.jar')
-    implementation project(':flutter')   // provided by Flutter tooling
+    // ✅ Removed flutter.jar & project(':flutter')
+    // ✅ No need to declare Kotlin plugin unless you add Kotlin code
 }
